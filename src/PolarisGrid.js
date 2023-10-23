@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-export class PolarisChip extends LitElement {
+export class PolarisGrid extends LitElement {
   static get properties() {
     return {
       title: { type: String },
@@ -11,13 +11,16 @@ export class PolarisChip extends LitElement {
     return css`
       :host {
         display: block;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
       }
     `;
   }
 
   constructor() {
     super();
-    this.title = 'My boilerplate';
+    this.title = 'My grid';
   }
 
   render() {

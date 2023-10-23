@@ -12,18 +12,29 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
+      font-family: Roboto,"Franklin Gothic Medium",Tahoma,sans-serif;;
       background-color: #ededed;
     }
   </style>
-  <title>polaris-chip</title>
+  <title>polaris-tile-fact</title>
 </head>
 
 <body>
-  <polaris-chip></polaris-chip>
-  <polaris-chip title="Cool stuff"></polaris-chip>
+  <polaris-grid>grid tester</polaris-grid>
 
-  <script type="module" src="./src/polaris-chip.js"></script>
+  <polaris-tile-fact></polaris-tile-fact>
+  <polaris-tile-fact title="Cool stuff"></polaris-tile-fact>
+
+  <polaris-tile-fact title="1,000+ student clubs and organizations"></polaris-tile-fact>
+
+  <polaris-grid>
+    <polaris-tile-fact>
+      tile inside grid
+    </polaris-tile-fact>
+  </polaris-grid>
+
+  <script type="module" src="./src/polaris-tile-fact.js"></script>
+  <script type="module" src="./src/polaris-grid.js"></script>
 </body>
 
 </html>
