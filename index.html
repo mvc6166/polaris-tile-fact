@@ -15,26 +15,41 @@
       font-family: Roboto,"Franklin Gothic Medium",Tahoma,sans-serif;;
       background-color: #ededed;
     }
+    
+    .niner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+    }
+
   </style>
   <title>polaris-tile-fact</title>
 </head>
 
 <body>
-  <polaris-grid>grid tester</polaris-grid>
+  <div class="niner">
+  <polaris-tile-fact bigwords="88,000+ students" bgtype="blue"></polaris-tile-fact>
+  
+  <polaris-tile-fact bigwords="58%" bgtype="white" details="of students are Pennsylvania residents."></polaris-tile-fact>
 
-  <polaris-tile-fact></polaris-tile-fact>
-  <polaris-tile-fact title="Cool stuff"></polaris-tile-fact>
+  <polaris-tile-fact bigwords="Students from 50 states and 145 countries" style="background-color: rgb(30,64,124); background: -moz-linear-gradient(180deg, rgba(30,64,124,1) 0%, rgba(0,30,68,1) 65%, rgba(0,30,68,1) 100%); background: -webkit-linear-gradient(180deg, rgba(30,64,124,1) 0%, rgba(0,30,68,1) 65%, rgba(0,30,68,1) 100%); background: linear-gradient(180deg, rgba(30,64,124,1) 0%, rgba(0,30,68,1) 65%, rgba(0,30,68,1) 100%);; "></polaris-tile-fact>
 
-  <polaris-tile-fact title="1,000+ student clubs and organizations"></polaris-tile-fact>
+  <polaris-tile-fact bigwords="Check out Undergraduate Admission statistics"></polaris-tile-fact>
 
-  <polaris-grid>
-    <polaris-tile-fact>
-      tile inside grid
-    </polaris-tile-fact>
-  </polaris-grid>
+  <polaris-tile-fact bigwords="Nearly 10,000 international students" bgtype="blue"></polaris-tile-fact>
+
+  <polaris-tile-fact bigwords="39%" bgtype="white" details="Of students are from diverse backgrounds."></polaris-tile-fact>
+  
+  <polaris-tile-fact bigwords="7,900+ faculty across all campuses" bgtype="darkblue"></polaris-tile-fact>
+  
+  <polaris-tile-fact bigwords="759,000+ alumni" bgtype="darkblue"></polaris-tile-fact>
+  
+  <polaris-tile-fact bigwords="See Penn State's Data Digest dashboards"></polaris-tile-fact>
 
   <script type="module" src="./src/polaris-tile-fact.js"></script>
-  <script type="module" src="./src/polaris-grid.js"></script>
+  </div>
 </body>
 
 </html>

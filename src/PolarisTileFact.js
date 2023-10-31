@@ -3,8 +3,9 @@ import { LitElement, html, css } from 'lit';
 export class PolarisTileFact extends LitElement {
   static get properties() {
     return {
-      title: { type: String },
-      xlink: { type: String },
+      bigwords: { type: String },
+      bgtype: { type: String },
+      details: { type: String },
     };
   }
 
@@ -16,10 +17,11 @@ export class PolarisTileFact extends LitElement {
 
       .tile {
         margin: auto;
-        width: 500px;
-        padding: 10px;
+        height: 240px;
+        width: 100%;
+        padding: 0px;
         text-align: center;
-        background-color: #001e44;
+        background-color: clear;
         color: #fff;
         box-shadow: 0 8px 16px 0 rgba(0,3,33,.1);
       }
@@ -29,15 +31,46 @@ export class PolarisTileFact extends LitElement {
 
   constructor() {
     super();
-    this.title = 'This, a polaris tile';
-    this.xlink = 'https://psu.edu/'
+    this.bigwords = 'This, a polaris tile';
+  }
+
+  
+  getTileStyle() {
+    if(this.bgtype == 'darkblue') {
+      <style>
+        .tile {
+          
+        }
+      </style>
+      //this.style.backround-color == '#001e44';
+    } /*else if(this.bgtype == 'blue') {
+      this.backround-color = '#1e407c';
+    } else if(this.bgtype == 'white') {
+      this.backround-color = '#fff';
+    } else if(this.bgtype == 'fade') {
+      this.backround-color;
+    } else {
+      return true;
+    }*/
+  }
+
+  getDivider() {
+    if(this.details){
+      return html`
+        <br>
+        ----------------------------
+        <br>
+        <span>${this.details}</span>
+      `;
+    }
   }
 
   render() {
     return html`
       <div class="tile">
-        <slot>${this.title}</slot>
-        <a href="${this.xlink}"></a>
+        <span>${this.bigwords}</span>
+        
+        ${this.getDivider()}
       </div>
     `;
   }
