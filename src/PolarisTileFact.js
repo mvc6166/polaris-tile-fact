@@ -85,8 +85,8 @@ export class PolarisTileFact extends LitElement {
 
       return html`
       <div class="tile-wrap">
-        <a class="link" href="${this.link}">
-          <div class="tile" style="color: #fff; background-color: rgba(0, 3, 33, 0.5); background-image: url(${this.pic});">
+        <a class="link" href="${this.link}" style="text-decoration: none;">
+          <div class="tile" style="color: #fff; background-image: url(${this.pic}); background-color: rgba(0, 3, 33, 0.5);">
             <div class="toptext">${this.bigwords}</div>
           </div>
         </a>
