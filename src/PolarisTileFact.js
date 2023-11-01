@@ -19,6 +19,9 @@ export class PolarisTileFact extends LitElement {
 
       .toptext {
         font-size: 36px;
+        padding-top: 160px;
+        padding-left: 60px;
+        padding-right: 60px;
       }
 
       .bottomtext {
@@ -71,7 +74,7 @@ export class PolarisTileFact extends LitElement {
   getDivider() {
     if(this.details){
       return html`
-        ---------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------
         <div class="bottomtext">${this.details}</div>
       `;
     }
