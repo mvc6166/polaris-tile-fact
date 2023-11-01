@@ -6,6 +6,8 @@ export class PolarisTileFact extends LitElement {
       theme: { type: String },
       bigwords: { type: String },
       details: { type: String },
+      link: { type: String },
+      pic: { type: String },
     };
   }
 
@@ -25,7 +27,7 @@ export class PolarisTileFact extends LitElement {
 
       .tile {
         margin: auto;
-        height: 240px;
+        height: 596px;
         width: 100%;
         padding: 0px;
         word-break: normal;
@@ -56,11 +58,6 @@ export class PolarisTileFact extends LitElement {
         color: #001e44;
       }
 
-      .tile[theme="pic"] {
-        background-color: gray;
-        color: #fff;
-      }
-
     `;
   }
 
@@ -68,6 +65,7 @@ export class PolarisTileFact extends LitElement {
     super();
     this.theme = 'navy';
     this.bigwords = 'Tile name here';
+    this.color = '#fff';
   }
 
   getDivider() {
@@ -80,11 +78,29 @@ export class PolarisTileFact extends LitElement {
   }
 
   render() {
-    return html`
-      <div class="tile" theme="${this.theme}">
-        <div class="toptext">${this.bigwords}</div>
-        ${this.getDivider()}
+    if(this.link && this.pic) {
+
+      return html`
+      <div class="tile-wrap">
+        <a class="link" href="${this.link}">
+          <div class="tile" style="color: #fff; background-color: rgba(0, 3, 33, 0.5); background-image: url(${this.pic});">
+            <div class="toptext">${this.bigwords}</div>
+          </div>
+        </a>
       </div>
     `;
+
+    } else {
+
+      return html`
+      <div class="tile-wrap">
+        <div class="tile" theme="${this.theme}">
+          <div class="toptext">${this.bigwords}</div>
+          ${this.getDivider()}
+        </div>
+      </div>
+      `;
+
+    }
   }
 }
